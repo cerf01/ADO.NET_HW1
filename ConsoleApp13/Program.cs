@@ -127,7 +127,7 @@ namespace ConsoleApp13
                         case "ex11":
                             {
                                 Console.WriteLine("Enter min calorie");
-                                int minClaories = getLineGigit(Console.ReadLine());
+                                int minClaories = setLineDigit(Console.ReadLine());
 
                                 string query = $"SELECT [Name],Calories FROM Info WHERE Calories < '{minClaories}' ";
                                 showQuerySelect(query, connection);                                
@@ -138,7 +138,7 @@ namespace ConsoleApp13
                         case "ex12":
                             {
                                 Console.WriteLine("Enter max calorie");
-                                int maxClaories = getLineGigit(Console.ReadLine());
+                                int maxClaories = setLineDigit(Console.ReadLine());
 
                                 string query = $"SELECT [Name],Calories FROM Info WHERE Calories > '{maxClaories}' ";
                                 showQuerySelect(query, connection);                                
@@ -149,10 +149,10 @@ namespace ConsoleApp13
                         case "ex13":
                             {
                                 Console.WriteLine("Enter min calorie");
-                                int minClaories = getLineGigit(Console.ReadLine());
+                                int minClaories = setLineDigit(Console.ReadLine());
 
                                 Console.WriteLine("Enter max calorie");
-                                int maxClaories = getLineGigit(Console.ReadLine());
+                                int maxClaories = setLineDigit(Console.ReadLine());
 
                                 string query = $"SELECT [Name],Calories FROM Info WHERE Calories < '{maxClaories}' AND Calories > '{minClaories}'";
                                 showQuerySelect(query, connection);                               
@@ -191,7 +191,7 @@ namespace ConsoleApp13
             }
         }
 
-        public static int getLineGigit(string str)
+        public static int setLineDigit(string str)
         {
             string numLine = str;
             if (numLine.All(c => char.IsDigit(c)))
@@ -199,7 +199,7 @@ namespace ConsoleApp13
           
             Console.WriteLine("is not a digit! try again");
 
-            getLineGigit(Console.ReadLine());
+            setLineDigit(Console.ReadLine());
             return 0;
 
         }
